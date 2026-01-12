@@ -19,19 +19,47 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 40px 20px;
+            padding: 40px 20px 20px;
             min-height: 100vh;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
         }
 
         .logo-container {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 20px;
         }
 
         .logo {
             max-width: 500px;
             width: 90%;
             height: auto;
+        }
+
+        .title-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .title-section h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .title-section h2 {
+            font-size: 24px;
+            font-weight: 400;
+            color: #666;
+            line-height: 1.4;
         }
 
         .links-container {
@@ -52,7 +80,7 @@
             flex-direction: column;
             align-items: center;
             gap: 15px;
-            min-width: 200px;
+            width: 200px;
         }
 
         .link-card:hover {
@@ -71,9 +99,35 @@
             font-weight: 500;
         }
 
+        footer {
+            width: 100%;
+            max-width: 1200px;
+            max-height: 10vh;
+            margin-top: 60px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        footer img {
+            height: 50px;
+            max-width: 45%;
+            object-fit: contain;
+        }
+
         @media (max-width: 600px) {
             .logo {
                 max-width: 350px;
+            }
+
+            .title-section h1 {
+                font-size: 32px;
+            }
+
+            .title-section h2 {
+                font-size: 18px;
             }
 
             .links-container {
@@ -82,30 +136,50 @@
 
             .link-card {
                 padding: 25px 35px;
-                min-width: 160px;
+                width: 160px;
             }
 
             .link-card i {
                 font-size: 40px;
             }
+
+            footer {
+                padding: 15px 10px;
+            }
+
+            footer img {
+                height: 40px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="logo-container">
-        <img src="site_logo.png" alt="SIVACOR Logo" class="logo">
+    <div class="content-wrapper">
+        <div class="logo-container">
+            <img src="site_logo.png" alt="SIVACOR Logo" class="logo">
+        </div>
+
+        <div class="title-section">
+            <h1>SIVACOR</h1>
+            <h2>Scalable Infrastructure for Validation of Computational Social Science Research</h2>
+        </div>
+
+        <div class="links-container">
+            <a href="https://submit.sivacor.org/" class="link-card">
+                <i class="fas fa-cog"></i>
+                <span>Submit</span>
+            </a>
+
+            <a href="https://docs.sivacor.org/" class="link-card">
+                <i class="fas fa-book"></i>
+                <span>Documentation</span>
+            </a>
+        </div>
     </div>
 
-    <div class="links-container">
-        <a href="https://submit.sivacor.org/" class="link-card">
-            <i class="fas fa-cog"></i>
-            <span>Submit</span>
-        </a>
-
-        <a href="https://docs.sivacor.org/" class="link-card">
-            <i class="fas fa-book"></i>
-            <span>Documentation</span>
-        </a>
-    </div>
+    <footer>
+        <img src="img/uoi_light.png" alt="University of Illinois">
+        <img src="img/cornell_light.png" alt="Cornell University">
+    </footer>
 </body>
 </html>
