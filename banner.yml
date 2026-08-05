@@ -17,7 +17,7 @@
 # `python scripts/set_banner.py --check` exits non-zero when index.html is out of
 # sync with this file -- useful if you ever want CI to catch a forgotten re-run.
 
-enabled: true
+enabled: false
 
 # info | warning | critical  -- picks the colour scheme.
 level: warning
@@ -30,7 +30,7 @@ message: >-
 
 # Grey out the Submit card and strip its link. Set false for an announcement
 # about *upcoming* maintenance, where submission still works right now.
-disable_submit: true
+disable_submit: false
 
 # Optional call-to-action appended after the message. An empty `link_text`
 # alongside a `link` falls back to "Learn more".
