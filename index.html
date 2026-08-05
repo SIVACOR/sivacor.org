@@ -99,6 +99,90 @@
             font-weight: 500;
         }
 
+        /* Maintenance notice + disabled Submit card. These styles are always
+           present; whether they are used is decided by banner.yml, baked into
+           the markup below by scripts/set_banner.py. */
+        .notice {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            width: 100%;
+            max-width: 640px;
+            margin-bottom: 40px;
+            padding: 18px 22px;
+            border: 2px solid;
+            border-radius: 12px;
+            text-align: left;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .notice i {
+            flex-shrink: 0;
+            margin-top: 3px;
+            font-size: 22px;
+        }
+
+        .notice p {
+            font-size: 17px;
+        }
+
+        .notice a {
+            color: inherit;
+            font-weight: 600;
+        }
+
+        .notice--info {
+            background-color: #e8f1fb;
+            border-color: #0b5cad;
+        }
+
+        .notice--info i {
+            color: #0b5cad;
+        }
+
+        .notice--warning {
+            background-color: #fff8e1;
+            border-color: #ffcc00;
+        }
+
+        .notice--warning i {
+            color: #a06800;
+        }
+
+        .notice--critical {
+            background-color: #fdecea;
+            border-color: #b3261e;
+        }
+
+        .notice--critical i {
+            color: #b3261e;
+        }
+
+        .link-card--disabled {
+            background-color: #fafafa;
+            border-color: #ececec;
+            color: #9a9a9a;
+            cursor: not-allowed;
+        }
+
+        /* Neutralize the .link-card:hover affordances -- there is nothing to click. */
+        .link-card--disabled:hover {
+            border-color: #ececec;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .link-card--disabled i {
+            color: #c4c4c4;
+        }
+
+        .link-card--disabled small {
+            font-size: 13px;
+            font-weight: 400;
+            text-align: center;
+        }
+
         footer {
             width: 100%;
             max-width: 1200px;
@@ -143,6 +227,15 @@
                 font-size: 40px;
             }
 
+            .notice {
+                padding: 14px 16px;
+                gap: 10px;
+            }
+
+            .notice p {
+                font-size: 15px;
+            }
+
             footer {
                 padding: 15px 10px;
             }
@@ -164,11 +257,23 @@
             <h2>Scalable Infrastructure for Validation of Computational Social Science Research</h2>
         </div>
 
+        <!-- NOTICE:BEGIN generated from banner.yml by scripts/set_banner.py -- edit banner.yml, not this block -->
+        <section class="notice notice--warning" role="alert">
+            <i class="fas fa-triangle-exclamation" aria-hidden="true"></i>
+            <div>
+                <p>Scheduled maintenance: job submission is unavailable Wed 05 Aug 2026, 07:00-17:00 CT.</p>
+            </div>
+        </section>
+        <!-- NOTICE:END -->
+
         <div class="links-container">
-            <a href="https://submit.sivacor.org/" class="link-card">
+            <!-- SUBMIT:BEGIN generated from banner.yml by scripts/set_banner.py -- edit banner.yml, not this block -->
+            <span class="link-card link-card--disabled" role="link" aria-disabled="true">
                 <i class="fas fa-cog"></i>
                 <span>Submit</span>
-            </a>
+                <small>Temporarily unavailable</small>
+            </span>
+            <!-- SUBMIT:END -->
 
             <a href="https://docs.sivacor.org/" class="link-card">
                 <i class="fas fa-book"></i>

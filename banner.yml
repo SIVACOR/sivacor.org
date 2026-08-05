@@ -1,0 +1,38 @@
+# Maintenance notice for the sivacor.org landing page.
+#
+# This site is static GitHub Pages served straight off `main`, so it stays up
+# when the SIVACOR stack does not -- which is the whole point of announcing here.
+# Nothing on this page talks to Girder.
+#
+# To raise a notice:
+#   1. edit the fields below, set `enabled: true`
+#   2. python scripts/set_banner.py     <- rewrites the marked blocks in index.html
+#   3. commit BOTH banner.yml and index.html, then push to `main`
+# To take it down: set `enabled: false`, re-run the script, commit, push.
+#
+# Unlike the docs banner (docs.sivacor.org), this one is not dismissable and has
+# no `expires` field: the notice is plain baked HTML with no JavaScript, so there
+# is nothing running at view time to expire it. It stays until you turn it off.
+#
+# `python scripts/set_banner.py --check` exits non-zero when index.html is out of
+# sync with this file -- useful if you ever want CI to catch a forgotten re-run.
+
+enabled: true
+
+# info | warning | critical  -- picks the colour scheme.
+level: warning
+
+# Plain text, no markup (it is HTML-escaped when baked in). Times should be
+# explicit about the zone; SIVACOR user-facing timestamps are America/Chicago.
+message: >-
+  Scheduled maintenance: job submission is unavailable
+  Wed 05 Aug 2026, 07:00-17:00 CT.
+
+# Grey out the Submit card and strip its link. Set false for an announcement
+# about *upcoming* maintenance, where submission still works right now.
+disable_submit: true
+
+# Optional call-to-action appended after the message. An empty `link_text`
+# alongside a `link` falls back to "Learn more".
+link: ''
+link_text: ''
