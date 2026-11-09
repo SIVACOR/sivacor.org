@@ -17,20 +17,22 @@
 # `python scripts/set_banner.py --check` exits non-zero when index.html is out of
 # sync with this file -- useful if you ever want CI to catch a forgotten re-run.
 
-enabled: false
+enabled: true
 
 # info | warning | critical  -- picks the colour scheme.
-level: warning
+level: critical
 
 # Plain text, no markup (it is HTML-escaped when baked in). Times should be
 # explicit about the zone; SIVACOR user-facing timestamps are America/Chicago.
 message: >-
-  Scheduled maintenance: job submission is unavailable
-  Wed 05 Aug 2026, 07:00-17:00 CT.
+  Our Cloud provider is unavailable due to storage failures.
+  SIVACOR service is down. System administrators are currently investigating and 
+  are working on recovering the system. We will update this status as we learn more.
+  Mon 09 Nov 2026, 11:49AM CST
 
 # Grey out the Submit card and strip its link. Set false for an announcement
 # about *upcoming* maintenance, where submission still works right now.
-disable_submit: false
+disable_submit: true
 
 # Optional call-to-action appended after the message. An empty `link_text`
 # alongside a `link` falls back to "Learn more".
